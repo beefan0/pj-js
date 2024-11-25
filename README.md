@@ -1,1 +1,1 @@
-https://beefan0.github.io/pj-js/
+https://beefan0.github.io/pj-js
