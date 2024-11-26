@@ -1,11 +1,9 @@
 function calcul(){
-    // lire le dom
     const km = document.getElementById('km').value
     const litre = document.getElementById('litre').value
     document.getElementById('km').value =''
     document.getElementById('litre').value=''
     const conso = (litre *100)/km
-    // afficher dans le DOM
     document.getElementById('conso').innerHTML=conso.toFixed(1) +'l/100km'
     let tranche =''
     if ( conso <7){
