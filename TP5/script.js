@@ -1,4 +1,9 @@
 let fruits = [];
+//---------
+const saveLocal =()=>{
+  localStorage.setItem('fruits',JSON.stringify(fruits));
+}
+//---------
 const afficher = () => {
     const tbody = document.getElementById("myTbody");
     tbody.innerHTML='';
@@ -17,6 +22,7 @@ const afficher = () => {
       if (confirm("Voulez-vous enlever : " + fruit + " ?")) {
        const indice =  event.target.closest("tr").rowIndex -1;
        fruits.splice(indice,1);
+       saveLocal();// ici <--- localStorage
        afficher();
       }
     };
@@ -24,11 +30,17 @@ const afficher = () => {
     tbody.appendChild(clone);
   }
 };
-
+//---------
 document.getElementById("btnAjouter").onclick = () => {
   let fruit = document.getElementById("fruit").value;
   document.getElementById("fruit").value = ""; // vider input
   fruits.push(fruit);
+  saveLocal(); // ici <--- localStorage
   afficher();
-
 };
+//---------
+const data = localStorage.getItem('fruits');
+if (data){
+  fruits= JSON.parse(data);
+  afficher();
+}""

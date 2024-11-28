@@ -16,7 +16,7 @@ document.getElementById('add').onclick = () => {
       tr1.remove(); 
     };
 
-    td1_2.appendChild(btn); 
+    td1_2.appendChild(btn);   
     tr1.appendChild(td1_1);
     tr1.appendChild(td1_2);
 
