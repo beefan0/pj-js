@@ -4,11 +4,7 @@ const afficher = () => {
     tbody.innerHTML='';
   for (let fruit of fruits) {
     console.log(fruits);
-    // selecteur sur le tableau
-   
-    // selecteur sur le template
     const template = document.getElementById("templateTr");
-    // cloner le template
     const clone = template.content.cloneNode(true);
     let td = clone.querySelector("td");
     td.textContent = fruit;
@@ -20,14 +16,13 @@ const afficher = () => {
        afficher();
       }
     };
-    // ajouter le tr cloner ds le tableau html
     tbody.appendChild(clone);
   }
 };
 
 document.getElementById("btnAjouter").onclick = () => {
   let fruit = document.getElementById("fruit").value;
-  document.getElementById("fruit").value = ""; // vider input
+  document.getElementById("fruit").value = "";
   fruits.push(fruit);
   afficher();
 
