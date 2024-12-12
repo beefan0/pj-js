@@ -52,8 +52,8 @@ function clics(cartes) {
         previousDiv.classList.remove("selected"); 
   
         if (IndexCarte !== i && cartes[IndexCarte] === cartes[i]) {
-          Images[IndexCarte].parentElement.remove(); 
-          Images[i].parentElement.remove(); 
+          Images[IndexCarte].remove(); 
+          Images[i].remove();  
           matchedPaires++;
         }
   
